@@ -14,7 +14,26 @@ Create a new git repository and write code to fulfill the brief to the best of y
 
 With the allusion to a future database requirement in the brief, I chose to use Ruby on Rails, tested with RSpec and Capybara. This allowed for a swift setup of a routing and testing structure with capability of extending to database storage.
 
+In the _routes_ branch I initially used Rails' sessions to store data. I then decided to explore other options, knowing that sessions have a fairly limited storage capacity.
+
+My final implementation uses Rails' cache service to write, read and overwrite data.
+
 ## Installation
 
-Clone this repo and cd into it
-<code>git clone https://github.com/paulalexrees/database_server.git && cd database_server<code>
+Clone this repo and cd into it:
+<code>git clone https://github.com/paulalexrees/database_server.git && cd database_server</code>
+
+Run <code>bundle</code> to install gem dependencies:
+<code>bundle install</code>
+
+To run tests:
+<code>rspec</code>
+
+To run locally on http://localhost:4000:
+<code>rails s</code>
+
+To set a key and value:
+<code>http://localhost:4000/set?my_key=my_value</code>
+
+To retrieve that value:
+<code>http://localhost:4000/get?key=my_key</code>
