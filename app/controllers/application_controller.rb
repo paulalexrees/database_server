@@ -4,7 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def set
-    session[:somekey] = params[:somekey]
+    key = params.keys.first
+    value = params[key]
+    session[key] = value
     render nothing: true
   end
 
