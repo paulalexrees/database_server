@@ -6,13 +6,17 @@ class ApplicationController < ActionController::Base
   def set
     key = params.keys.first
     value = params[key]
-    session[key] = value
+    if Rails.cache.exist?(key)
+      Rails.cache.write(key, value)
+    else
+      Rails.cache.fetch(key) { value }
+    end
     render nothing: true
   end
 
   def get
     requested_key = params[:key]
-    value = session[requested_key]
+    value = Rails.cache.fetch(requested_key)
     render plain: value
   end
 
