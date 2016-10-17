@@ -1,11 +1,4 @@
 This is my attempt at the Database Server Tech Test.
-The brief:
-
-# Database server tech test
-
-Today we will practice a tech test to demonstrate your understanding of web technologies. This is an actual tech test that was given to one of our coaches when they applied for a dev role.
-
-Bear in mind that most tech tests do not have a set timeframe. Although we do have a "soft" time limit, imposed mainly by the structure of the week, we are not expecting you to finish within the day - so take your time and focus on writing the best code you can produce.
 
 ## The brief
 
@@ -16,3 +9,12 @@ You receive a message from a prospective employer:
 During your [mock] interview, you will pair on saving the data to a file."
 
 Create a new git repository and write code to fulfill the brief to the best of your ability. Store the data in memory, not in a database, but bear in mind that you will later need to add a database to this code.
+
+## My methodology
+
+With the allusion to a future database requirement in the brief, I chose to use Ruby on Rails, tested with RSpec and Capybara. This allowed for a swift setup of a routing and testing structure with capability of extending to database storage.
+
+## Installation
+
+Clone this repo and cd into it
+<code>git clone https://github.com/paulalexrees/database_server.git && cd database_server<code>
