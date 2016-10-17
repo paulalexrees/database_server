@@ -28,5 +28,20 @@ RSpec.describe ApplicationController do
     end
   end
 
+  describe 'GET #get' do
+    it "returns HTTP success" do
+      get :get
+      expect(response).to have_http_status(:success)
+    end
+
+    it "returns a json" do
+      get :set, first_key: "first"
+      get :get, key: "first_key"
+      expect(response.body).to eq "first"
+    end
+
+
+  end
+
 
 end

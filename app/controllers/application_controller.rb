@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
     render nothing: true
   end
 
+  def get
+    requested_key = params[:key]
+    value = session[requested_key]
+    render plain: value
+  end
+
 end
